@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Dúvidas Projeto-Sic CGPATR</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <header>
+    <div>
+      <h1>Dúvidas Projeto-SIC</h1>
+    </div>
+    <div>
+      <nav>
+        <ul id="menu">
+          <li>
+            <a href="#codigo">
+              Códigos
+            </a>
+          </li>
+          <li>
+            <a href="#novo">
+              Novos Expedientes
+            </a>
+          </li>
+          <li>
+            <a href="#duplo">
+              Duplicação de Registros
+            </a>
+          </li>
+          <li>
+            <a href="#assinalacoes divergentes">
+            Assinalações Divergentes
+            </a>
+          </li>
+          <li>
+            <a href="#assinalacoes">
+              Assinalações
+            </a>
+          </li>
+          <li>
+            <a href="#assinalacoes">
+              Estudo de Casos
+            </a>
+          </li>
+          <li>
+            <a>
+              Perguntas
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="tema aberto" id="codigo">
+      <h2 class="titulo">Códigos</h2>
+      <p>Códigos alfanuméricos identificam individualmente os polígonos correspondentes às áreas identificadas em
+      Processos Admnistrativos de CGPATRI.</p>
+      <p>
+      <strong>C</strong> - corresponde ao desenho de uma área municipal. Polígonos reaproveitados pelos técnicos de SI
+      podem ter códigos iniciados com <strong>C</strong>.</p>
+      <p>
+      <strong>A</strong> - corresponde à localização de uma área municipal que não pertencia a um croqui no momento de
+      sua anotação. Esses registros diferem dos polígonos de assinalação pois foram migrados do Arquivo de Fichas de
+      Anotações Diversas e nem todos os expedientes da ABA AD's possuem um desenho de assinalação dentro do Qgis.
+      </p>
+      <br>
+      <h2 class="titulo">Utilizando Códigos</h2>
+      <p>Podemos <strong>reutilizar registros de expedientes</strong> já cadastrados na Camada Croqui ou na ABA AD's, ou
+      seja, <strong>eles não precisam ser duplicados</strong> quando o código de assinalação estiver preenchido com:
+      <ul class="cod">
+      <li>Apenas uma letra: "S" "C" ou "A"</li>
+      <li>Caracter nullo: "NULL"</li>
+      <li>Registro duplicado: código e demais informações do registro idênticas a outro configurando duplicidade.</li>
+      </ul>
+      </p>
+    </section>
+    <section class="tema" id="novo">
+      <h2 class="titulo">Indexação de Novos Expedientes</h2>
+      <ul>
+        <li>
+          <p class="pergunta">
+            Será feito o preenchimento do campo "Nº de Croqui" e "Área M" para expedientes novos?
+          <p><strong>ABA Expedientes:</strong></p>
+          <p class="resposta"><strong>R:</strong> Não. Expedientes novos que passam pela primeira vez no departamento para
+            informar, não recebem informação no campo Nº do Croqui ou Área M, para não serem vinculados à camada croquis do Projeto-Sic.</p>
+          <p><strong>ABA Assinalação</strong>
+          <p class="resposta"><strong>R:</strong> Indiferente, pois o preenchimento do campo nessa ABA não vincula os
+            registros à camada Croqui. Não é preciso editar o campo para apagar essa informação quando o mesmo estiver
+            preenchido.</p>
+          </p>
+        <li>
+          <p class="pergunta">Quando preencher os campos Nº de Croqui e Área M?</p>
+          <p><strong>R:</strong> Expedientes de informações anteriores que foram anotados na Pasta de Croqui física e
+            estão sendo migrados para sistema digital continuam recebendo informações nos campos Nº do Croqui e Área M,
+            esses expedientes antigos terão vínculo com a pasta de croqui.</p>
+        </li>
+        <li>
+          <p class="pergunta">O campo CAP será preenchido?</p>
+          <p class="resposta"><strong>O preenchimento do campo CAP é opcional</strong>, pois não há vinculação feita a
+            partir do preenchimento desse campo no cadastro digital. Essa informação deve ser incluída no campo
+            "Observações_planilha" para que apareça no relatório de informações a ser incluído no SEI.</p>
+        </li>
+      </ul>
+    </section>
+    <section class="tema" id="duplo">
+    <h2 class="titulo">Duplicação de Registros</h2>
+    <ul>
+      <li>
+        <p class="pergunta">Registros com código contendo apenas uma letra (sem números) devem ser duplicados?</p>
+        <p class="resposta"><strong>R:</strong> Não. Registros cujo código contém uma letra podem ser reaproveitados
+          apenas copiando e colando o código desejado da <strong>ABA Assinalações</strong> ou da <strong>ABA
+            Expedientes</strong>. Registros da <strong>ABA AD's</strong> cujo código de assinalação tiver apenas a letra <strong>A</strong> sem números, podem ser utilizados sem duplicação de registro, apenas copiando o código do
+          expediente da <strong>ABA Assinalação.</strong> </p>
+      </li>
+      <li>
+        <p class="pergunta">Registros cujo código de assinalação for alfanumérico devem ser duplicados?</p>
+        <p class="resposta"><strong>R:</strong> Sim. Todos os registros cujo código de assinalação contiver letra e
+          números devem ser duplicados e ter seu código substituído pelo da <strong> ABA Assinalação</strong> ou pelo
+          código do expediente que está sendo respondido na<strong>ABA Expedientes</strong></p>
+      </li>
+    </ul>
+    </section>  
+    <section class="tema" id="assinalacoes">
+    <div id="estudoDeCaso">
+      <div class="assinalacao">
+        <h2 class="titulo">Assinalações</h2>
+        <p class="legenda"><strong>Usando a pesquisa por expediente nem sempre se localiza a assinalação</strong>, pois a
+        busca retorna o último expediente feito anteriormente. (nesse caso buscamos a assinalação pesquisando pela camada
+        croqui ou quadras escolhendo entre as assinalações existentes com o botão direito).
+        </p>
+        <p>Ex.: 6013.2023/0000963-8</p>
+      </div>
+        <div>
+          <figcaption>Assinalação muito pequena, não pode ser vizualizada sem ajuste de zoom. Não é localizada quando a busca por expediente não funciona.</figcaption>
+          <figure>
+           <img src="imagem/ass 0963-8 maps.PNG"
+        alt="Imagem de área pública com google maps"> 
+          </figure>
+        </div>
+      </section>
+      <section class="tema" id="assinalacoes divergentes">
+        <h2 class="titulo">Assinalações Divergentes</h2>
+        <p class="legenda">Quando a área assinalada no SEI é “menor” que o polígono do Qgis. ex.: 6061.2022/0001306-6</p>
+        <div class="flex-container">
+        <figcaption>Assinalação do croqui passando por parte da área 3M e área “0” do croqui 103890.
+          <figure>
+            <img src="imagem/1306-6.PNG" alt="imagem de assinalação em área pública em croqui patrimonial">
+           <figcaption>Polígono pegando toda área 3M e toda área “0” lindeira.</figcaption>
+            <img src="imagem/ass1306-6.PNG">
+          </figure>
+        </div>        
+          <p>Quando a área assinalada no SEI é “maior” do que o polígono do Qgis pegando mais de um croqui ou área M Ex.:</p>
+          <p>7610.2019/0002487-5</p>
+        <div class="flex-container">
+          <figure>
+            <figcaption>Desenho de polígono no Qgis avançando sobre área 8M do croqui 102763:
+              <img src="imagem/proc frank.jpg" alt="Imagem de assinalação em área pública georeferenciada no Qgis">
+          </figure>
+          <figure>
+            <figcaption>Assinalação do croqui passando apenas para área “0” do croqui 102763:</figcaption>
+            <img src="imagem/2487-5.PNG" alt="Localização de área municipal feita em croqui patrimonial.">
+          </figure>
+        </div>
+      </section>
+   </main>
+  <script src="script.js"></script>
+</body>
+
+</html>
