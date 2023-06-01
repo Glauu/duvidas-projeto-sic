@@ -1,0 +1,38 @@
+@media(max-width:768px){
+
+h1{
+    font-size: 5px;
+}
+
+p{
+    font-size:4px;
+}
+
+main{
+    margin: 1px;
+    padding:2px;
+    box-sizing: border-box;
+}
+
+h2{
+    font-size: 8px;
+}
+
+img{
+    width:30%;
+    height:30%;
+}
+section{
+
+    margin:5px 5px;
+}
+
+header{
+    margin-bottom:10px ;
+}
+
+nav{
+    margin:auto;
+    font-size: 2px;
+}
+}
