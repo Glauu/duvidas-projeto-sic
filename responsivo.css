@@ -1,0 +1,38 @@
+@media(max-width:768px){
+
+h1{
+    font-size: 5px;
+}
+
+p{
+   font-size: clamp(0.5em, 0.5em + 1vw, 1.5em)
+}
+
+main{
+    margin: 1px;
+    padding:2px;
+    box-sizing: border-box;
+}
+
+h2{
+    font-size: clamp(1em, 1em + 1vw, 1.5em)
+}
+
+img{
+    width:30%;
+    height:30%;
+}
+section{
+
+    margin:5px 5px;
+}
+
+header{
+    margin-bottom:10px ;
+}
+
+nav{
+    margin:auto;
+    font-size: 2px;
+}
+}
