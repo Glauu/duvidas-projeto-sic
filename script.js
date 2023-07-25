@@ -20,23 +20,41 @@ function carregaInstrucoes (){
   resposta01:"ABA Expedientes Não. Expedientes novos que passam pela primeira vez no departamento para informar e tem o desenho de sua assinalação feita no Qgis, não recebem informação no campo Nº do Croqui ou Área M para não serem vinculados à camada croquis do Projeto-Sic.", 
   resposta02:"ABA Assinalação Indiferente, pois o preenchimento do campo nessa ABA não vincula os registros à camada Croqui. Não é preciso editar o campo para apagar essa informação quando o mesmo estiver preenchido.",
   pergunta02:"Quando preencher os campos Nº de Croqui e Área M?",
-  resposta02:"xpedientes de informações anteriores que foram anotados na Pasta de Croqui física e estão sendo migrados para sistema digital continuam recebendo informações nos campos Nº do Croqui e Área M, esses expedientes antigos terão vínculo com a pasta de croqui.",
+  resposta02:"xpedientes de informações anteriores que foram anotados na Pasta de Croqui física e estão sendo migrados para sistema digital iinuam recebendo informações nos campos Nº do Croqui e Área M, esses expedientes antigos terão vínculo com a pasta de croqui.",
   pergunta03:"O campo CAP será preenchido?",
   resposta03:"O preenchimento do campo CAP é opcional, pois não há vinculação feita a partir do preenchimento desse campo no cadastro digital. Essa informação deve ser incluída no campo 'Observações_planilha' para que apareça no relatório de informações a ser incluído no SEI.",},
   };
-  console.log(tiraDuvida)
+  console.log(tiraDuvida);
   
 }
 carregaInstrucoes()
 
 
-document.getElementById('menu').addEventListener(change, function(){
+const botao = document.querySelector('.menu');
+const boxConteudo = document.querySelectorAll('.tema');
 
-  var selecionado = this.value;
-  var secao = document.getElementsByClassName('tema');
+function mudaConteudo(){
 
-  for( var i = 0; i< secao.length; i++){
-    elementos[i].style.display = 'none';
+  let j = 0;
+  let i = 0;
+  const boxAtual = boxConteudo[i];
+  const botaoAtual = botao[j];
+  const atSection = boxAtual.atributes.id.value
+  const atListItem = botaoAtual.atributes.href.value
+  for (i = 0; i < boxConteudo.lenght; i++){
+    for(j = 0; j < botao.lenght; j++){
+  
+      if (atListItem === atSection){
+
+        boxAtual.classList.add('aberto');
+        console.log(boxAtual);
+      }
+      else {
+      return(1);
+      }
+    }
   }
-document.getElementById(selecionado).style.display = 'block';
-});
+}
+botao .onclick = function(){
+  mudaConteudo()
+}
