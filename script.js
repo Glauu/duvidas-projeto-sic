@@ -30,7 +30,7 @@ function carregaInstrucoes (){
 carregaInstrucoes()
 
 
-const botao = document.querySelector('.menu');
+const botao = document.querySelector('#menu');
 const boxConteudo = document.querySelectorAll('.tema');
 
 function mudaConteudo(){
