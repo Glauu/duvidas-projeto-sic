@@ -39,8 +39,8 @@ function mudaConteudo(){
   let i = 0;
   const boxAtual = boxConteudo[i];
   const botaoAtual = botao[j];
-  const atSection = boxAtual.atributes.url.value
-  const atListItem = botaoAtual.atributes.url.value
+  const atSection = boxAtual.atributes.URL.value
+  const atListItem = botaoAtual.atributes.URL.value
   for (i = 0; i < boxConteudo.lenght; i++){
     for(j = 0; j < botao.lenght; j++){
   
