@@ -103,7 +103,7 @@ section{
   border-top-left-radius:30px;
   border-bottom-left-radius:30px;
   background-color: #f9f9fa;
-  display: none;
+  display: block;
 }
 
 .titulo{
