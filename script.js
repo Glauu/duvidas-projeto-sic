@@ -39,10 +39,12 @@ function mudaConteudo(){
   let i = 0;
   const boxAtual = boxConteudo[i];
   const botaoAtual = botao[j];
-  const web = window.location.href;
-  console.log(url);
-  const atSection = boxAtual.atributes.URL.value
-  const atListItem = botaoAtual.atributes.URL.value
+  const web = newURL(window.location.href);
+  console.log(web);
+  const paramWeb = web.hash;
+  console.log(paramWeb);
+  const retiraHash = paramWeb.replace(/(#)/, "");
+  
   for (i = 0; i < boxConteudo.lenght; i++){
     for(j = 0; j < botao.lenght; j++){
   
