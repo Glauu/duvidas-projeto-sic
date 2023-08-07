@@ -48,8 +48,8 @@ function mudaConteudo(){
   for (i = 0; i < boxConteudo.lenght; i++){
     for(j = 0; j < botao.lenght; j++){
   
-      if (atListItem === atSection){
-
+      if (retiraHash === atSection){
+// pegar atributo id da section e usar na condição.
         boxAtual.classList.add('aberto');
         console.log(boxAtual);
       }
