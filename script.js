@@ -44,6 +44,8 @@ function mudaConteudo(){
   const paramWeb = web.hash;
   console.log(paramWeb);
   const retiraHash = paramWeb.replace(/(#)/, "");
+  console.log(retiraHash);
+  const atSection = boxConteudo[i].atributes.id;
   
   for (i = 0; i < boxConteudo.lenght; i++){
     for(j = 0; j < botao.lenght; j++){
